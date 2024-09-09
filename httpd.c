@@ -6,7 +6,7 @@
  * 		       3. netstat -an | grep LISTEN
  * 		       You should see:
  * 		       tcp		127.0.0.1:8282 
- * 		       4.env - telnet localhost 
+ * 		       4.env - telnet localhost */
 #include <netinet/in.h>
 #include <stdio.h>
 #include <sys/socket.h>
