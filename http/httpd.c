@@ -3,10 +3,11 @@
 /*After compiling run: 1. ./"binary_name"
  * 		       2. ./"binary_name" 8282
  * 		       You should see 0.0.0.0:8282 or 127.0.0.1:8282
+ *          From here on open a new terminal to keep the program & webserver running
  * 		       3. netstat -an | grep LISTEN
  * 		       You should see:
  * 		       tcp		127.0.0.1:8282 
- * 		       4.env - telnet localhost */
+ * 		       4.env - telnet localhost*/
 #include <netinet/in.h>
 #include <stdio.h>
 #include <sys/socket.h>
@@ -17,8 +18,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*Local host: 127.0.0.1*/
-#define LISTENADDR "0.0.0.0"
+/*Local host: 127.0.0.1
+* Public: 0.0.0.0       */
+#define LISTENADDR "127.0.0.1"
 
 /*global*/
 char *error;
