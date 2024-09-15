@@ -17,6 +17,7 @@ int main()
 	struct sockaddr_in srv, cli;
 	char buf[512];
 	char *data;
+	int n;
 
 	addrlen = 0;
 	memset(&srv, 0, sizeof(srv));
@@ -57,10 +58,11 @@ int main()
 		return -1;
 	}
 	printf("Client connected\n");
-	read(c, buf, 511);
+	n = read(c, buf, 511);
 	data = "http v1.0\n";
 	write(c, data, strlen(data));
-
+	write(1, buf, n);
+	
 	close(c);
 	close(s);
 
